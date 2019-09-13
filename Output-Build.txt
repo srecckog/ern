@@ -1,0 +1,35 @@
+﻿1>------ Build started: Project: ern, Configuration: Debug Any CPU ------
+1>C:\ERV\ern\ern\Form1.cs(421,13,421,22): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(457,21,457,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(460,21,460,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(463,21,463,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(466,21,466,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(469,21,469,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(472,21,472,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(475,21,475,29): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(478,21,478,26): warning CS0162: Unreachable code detected
+1>C:\ERV\ern\ern\Form1.cs(332,37,332,39): warning CS0219: The variable 'iw' is assigned but its value is never used
+1>C:\ERV\ern\ern\Form1.cs(348,29,348,31): warning CS0219: The variable 'iw' is assigned but its value is never used
+1>C:\ERV\ern\ern\Form1.cs(372,25,372,27): warning CS0219: The variable 'iw' is assigned but its value is never used
+1>C:\ERV\ern\ern\Form1.cs(497,26,497,29): warning CS0168: The variable 'd11' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(500,17,500,18): warning CS0219: The variable 'i' is assigned but its value is never used
+1>C:\ERV\ern\ern\Form1.cs(672,43,672,45): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(682,43,682,45): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(691,43,691,45): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(719,47,719,49): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(729,47,729,49): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(738,47,738,49): warning CS0168: The variable 'ee' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(709,20,709,23): warning CS0219: The variable 'id1' is assigned but its value is never used
+1>C:\ERV\ern\ern\Form1.cs(781,31,781,37): warning CS0168: The variable 'reader' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(876,20,876,25): warning CS0168: The variable 'rfid1' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(876,36,876,38): warning CS0168: The variable 'dt' is declared but never used
+1>C:\ERV\ern\ern\Form1.cs(879,20,879,23): warning CS0219: The variable 'sql' is assigned but its value is never used
+1>  ern -> C:\ERV\ern\ern\bin\Debug\ern.exe
+Building ern...
+2>------ Publish started: Project: ern, Configuration: Debug Any CPU ------
+Connecting to 'C:\publish\erv\'...
+Publishing files...
+Publish success.
+C:\publish\erv\
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Publish: 1 succeeded, 0 failed, 0 skipped ==========
