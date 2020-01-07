@@ -193,11 +193,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_deaktiv = new System.Windows.Forms.Panel();
+            this.btn_aktiviraj = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.btn_zatvori_deakt = new System.Windows.Forms.Button();
             this.cbx_listaradnika_deaktiv = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.btn_aktiviraj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -399,7 +399,7 @@
             this.karticeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1908, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1684, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -627,7 +627,7 @@
             // novaKarticaToolStripMenuItem
             // 
             this.novaKarticaToolStripMenuItem.Name = "novaKarticaToolStripMenuItem";
-            this.novaKarticaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.novaKarticaToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.novaKarticaToolStripMenuItem.Text = "Nova kartica";
             this.novaKarticaToolStripMenuItem.Click += new System.EventHandler(this.novaKarticaToolStripMenuItem_Click);
             // 
@@ -639,7 +639,7 @@
             this.feroimpex900ToolStripMenuItem,
             this.tokabu900ToolStripMenuItem});
             this.uvozPodatakaToolStripMenuItem.Name = "uvozPodatakaToolStripMenuItem";
-            this.uvozPodatakaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.uvozPodatakaToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.uvozPodatakaToolStripMenuItem.Text = "Uvoz podataka iz radnici.csv";
             this.uvozPodatakaToolStripMenuItem.Click += new System.EventHandler(this.uvozPodatakaToolStripMenuItem_Click);
             // 
@@ -673,8 +673,8 @@
             // deaktivacijaKarticeToolStripMenuItem
             // 
             this.deaktivacijaKarticeToolStripMenuItem.Name = "deaktivacijaKarticeToolStripMenuItem";
-            this.deaktivacijaKarticeToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.deaktivacijaKarticeToolStripMenuItem.Text = "Deaktivacija kartice";
+            this.deaktivacijaKarticeToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.deaktivacijaKarticeToolStripMenuItem.Text = "Deaktivacija/Aktivacija kartice";
             this.deaktivacijaKarticeToolStripMenuItem.Click += new System.EventHandler(this.DeaktivacijaKarticeToolStripMenuItem_Click);
             // 
             // comboBox3
@@ -1902,6 +1902,16 @@
             this.pnl_deaktiv.TabIndex = 11;
             this.pnl_deaktiv.Visible = false;
             // 
+            // btn_aktiviraj
+            // 
+            this.btn_aktiviraj.Location = new System.Drawing.Point(175, 119);
+            this.btn_aktiviraj.Name = "btn_aktiviraj";
+            this.btn_aktiviraj.Size = new System.Drawing.Size(75, 23);
+            this.btn_aktiviraj.TabIndex = 4;
+            this.btn_aktiviraj.Text = "Aktiviraj";
+            this.btn_aktiviraj.UseVisualStyleBackColor = true;
+            this.btn_aktiviraj.Click += new System.EventHandler(this.Btn_aktiviraj_Click);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1939,21 +1949,11 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Odaberite radnika";
             // 
-            // btn_aktiviraj
-            // 
-            this.btn_aktiviraj.Location = new System.Drawing.Point(175, 119);
-            this.btn_aktiviraj.Name = "btn_aktiviraj";
-            this.btn_aktiviraj.Size = new System.Drawing.Size(75, 23);
-            this.btn_aktiviraj.TabIndex = 4;
-            this.btn_aktiviraj.Text = "Aktiviraj";
-            this.btn_aktiviraj.UseVisualStyleBackColor = true;
-            this.btn_aktiviraj.Click += new System.EventHandler(this.Btn_aktiviraj_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1908, 1045);
+            this.ClientSize = new System.Drawing.Size(1684, 1031);
             this.Controls.Add(this.pnl_deaktiv);
             this.Controls.Add(this.panel31);
             this.Controls.Add(this.panelNovakartica);
