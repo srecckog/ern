@@ -73,7 +73,8 @@ namespace ern
         public List<weekID> tjedni = new List<weekID>();
         public List<ERV> ervii = new List<ERV>();
         public List<ERV2> ervii2 = new List<ERV2>();
-        public string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=sa;Password=AdminFX9.";
+        public string connectionString   = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=sa;Password=AdminFX9.";
+        public string connectionString2 = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=sa;Password=AdminFX9.";
         public string selectedid;
         public string idloged,idprijave,korisnik;
 
@@ -250,7 +251,7 @@ namespace ern
 
             //sql = "select dt Vrijeme,LastName Prezime,u.FirstName Ime,r.name Lokacija,e.Device_ID Uredaj,e.EventType,t.CodeName,b.extid FxId,e.[User],e.No2 Serial_number,e.no RFID_Hex from event e left join badge b on e.No= b.BadgeNo left join [dbo].[User] u on u.extid=b.extid left join eventtype t on e.EventType=t.Code left join reader r on r.id=e.device_id WHERE E.[USER] IS NOT NULL and e.dt>='" + dat1+"'";
 
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection(connectionString2);    // rfind
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
             connection.Open();
@@ -385,7 +386,7 @@ namespace ern
             {
                 array[0] = radnik.prezime + " " + radnik.ime + "-" + radnik.id;  // prezim i ime
                 ukupnoVrijeme = 0;
-                string connectionString2 = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=fx_public;Password=.";
+                string connectionString2 = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=fx_public;Password=.";
                 SqlDataReader rdr = null;
                 using (SqlConnection cn = new SqlConnection(connectionString2))
                 {
@@ -565,7 +566,7 @@ namespace ern
 
             //sql = "select dt Vrijeme,LastName Prezime,u.FirstName Ime,r.name Lokacija,e.Device_ID Uredaj,e.EventType,t.CodeName,b.extid FxId,e.[User],e.No2 Serial_number,e.no RFID_Hex from event e left join badge b on e.No= b.BadgeNo left join [dbo].[User] u on u.extid=b.extid left join eventtype t on e.EventType=t.Code left join reader r on r.id=e.device_id WHERE E.[USER] IS NOT NULL and e.dt>='" + dat1+"'";
 
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection(connectionString2);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
             connection.Open();
@@ -890,7 +891,7 @@ namespace ern
 
                     //sql = "select dt Vrijeme,LastName Prezime,u.FirstName Ime,r.name Lokacija,e.Device_ID Uredaj,e.EventType,t.CodeName,b.extid FxId,e.[User],e.No2 Serial_number,e.no RFID_Hex from event e left join badge b on e.No= b.BadgeNo left join [dbo].[User] u on u.extid=b.extid left join eventtype t on e.EventType=t.Code left join reader r on r.id=e.device_id WHERE E.[USER] IS NOT NULL and e.dt>='" + dat1+"'";
 
-                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlConnection connection = new SqlConnection(connectionString2);
                     SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
                     DataSet ds = new DataSet();
                     connection.Open();
@@ -1054,14 +1055,14 @@ namespace ern
                         break;
                     }
                 }
-                sql0 = "INSERT into event (NO,no2,dt,ispaired,[user],device_id,eventtype,tnaevent,optimisticlockfield,gcrecord) values('00000000','0','" + dat1 + "',null,null,'" + lokacija + "','SP138',null,null,null)";
-                sql1 = "INSERT into event (NO,no2,dt,ispaired,[user],device_id,eventtype,tnaevent,optimisticlockfield,gcrecord) values('" + no + "','" + no2 + "','" + dat1 + "',null," + IDradnika.ToString() + ",'" + lokacija + "','MI',null,null,null)";
+                sql0 = "INSERT into rfind.dbo.event (NO,no2,dt,ispaired,[user],device_id,eventtype,tnaevent,optimisticlockfield,gcrecord) values('00000000','0','" + dat1 + "',null,null,'" + lokacija + "','SP138',null,null,null)";
+                sql1 = "INSERT into rfind.dbo.event (NO,no2,dt,ispaired,[user],device_id,eventtype,tnaevent,optimisticlockfield,gcrecord) values('" + no + "','" + no2 + "','" + dat1 + "',null," + IDradnika.ToString() + ",'" + lokacija + "','MI',null,null,null)";
                 //  sql = "select dt Vrijeme,LastName Prezime,u.FirstName Ime,r.name Lokacija,e.Device_ID Uredaj,e.EventType,t.CodeName,b.extid FxId,e.[User],e.No2 Serial_number,e.no RFID_Hex from event e left join badge b on e.No= b.BadgeNo left join [dbo].[User] u on u.extid=b.extid left join eventtype t on e.EventType=t.Code left join reader r on r.id=e.device_id WHERE E.[USER] IS NOT NULL and e.eventtype!='SP23'  and ( e.dt>='" + dat1 + "' and e.dt<='" + dat2 + "') AND  ( lastname like '%" + textBox1.Text + "%'  and  e.device_id='" + lokacija + "') order by dt desc";
 
             }
 
             ////sql = "select dt Vrijeme,LastName Prezime,u.FirstName Ime,r.name Lokacija,e.Device_ID Uredaj,e.EventType,t.CodeName,b.extid FxId,e.[User],e.No2 Serial_number,e.no RFID_Hex from event e left join badge b on e.No= b.BadgeNo left join [dbo].[User] u on u.extid=b.extid left join eventtype t on e.EventType=t.Code left join reader r on r.id=e.device_id WHERE E.[USER] IS NOT NULL and e.dt>='" + dat1+"'";
-            using (SqlConnection openCon = new SqlConnection(connectionString))
+            using (SqlConnection openCon = new SqlConnection(connectionString2))
             {
                 using (SqlCommand querySaveStaff = new SqlCommand(sql0))
                 {
@@ -1331,10 +1332,10 @@ namespace ern
             DateTime dt22 = DateTime.ParseExact(test, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
 
-            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=fx_public;Password=.";
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=fx_public;Password=.";
             SqlDataReader rdr = null;
             //             ervii2.Clear();
-            using (SqlConnection cn = new SqlConnection(connectionString))
+            using (SqlConnection cn = new SqlConnection(connectionString2))
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("dbo.sp_VrijemeUlazaIzlaza", cn);
@@ -1477,7 +1478,7 @@ namespace ern
             test = "2016-12-31";
             DateTime dt22 = DateTime.ParseExact(test, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=fx_public;Password=.";
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=fx_public;Password=.";
             SqlDataReader rdr = null;
             //             ervii2.Clear();
             using (SqlConnection cn = new SqlConnection(connectionString))
@@ -1668,7 +1669,7 @@ namespace ern
         private void button11_Click(object sender, EventArgs e)
         {
 
-            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=sa;Password=AdminFX9.";
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=sa;Password=AdminFX9.";
             SqlDataReader rdr = null;
             //             ervii2.Clear();
             using (SqlConnection cn = new SqlConnection(connectionString))
@@ -1724,7 +1725,7 @@ namespace ern
             pocetniEkran();
             panelNovakartica.Visible = false;
             string csn1, id1, imedjelatnika1;
-            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=sa;Password=AdminFX9.";
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=sa;Password=AdminFX9.";
             SqlDataReader rdr = null;
             csn1 = "";
             id1 = CB_ListaRadnika.SelectedValue.ToString();
@@ -1822,7 +1823,7 @@ namespace ern
                 if (1 == 1)
                 {
                     cn.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.FX_Import", cn);
+                    SqlCommand cmd = new SqlCommand("rfind.dbo.FX_Import", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@EXT_ID", SqlDbType.VarChar, 6).Value = (id1).Trim();  // lokacija
                     cmd.Parameters.Add("@FNAME", SqlDbType.VarChar, 35).Value = ime1;  // """; //  DateTime.ParseExact(dat1, "yyyy-MM-dd HH:mm:ss" , System.Globalization.CultureInfo.InvariantCulture);  // Od datuma
@@ -2944,7 +2945,7 @@ namespace ern
                     string otisao1 = "", otisao11 = "";
                     int rv = 0;
 
-                    string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=fx_public;Password=.";
+                    string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=fx_public;Password=.";
                     SqlDataReader rdr = null;
                     SqlConnection cnn = null;
 
@@ -3011,7 +3012,7 @@ namespace ern
                                 rv1d = ""; rv2d = ""; rv3d = "";
 
 
-                                connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=fx_public;Password=.";
+                                connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=fx_public;Password=.";
                                 rdr = null;
                                 cnn = null;
 
@@ -5727,9 +5728,13 @@ namespace ern
                     }
 
                     rfidhex = rfidd.ToString("X");
-                    rfid2 = (int.Parse(rfidhex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber)).ToString();
+                    int l1 = rfidhex.Length-8;
+                    rfid2 = (int.Parse(rfidhex.Substring(0, l1), System.Globalization.NumberStyles.HexNumber)).ToString();
+                    custid = rfid2;   
+                    string rfid1 = rfidhex.Substring(rfidhex.Length - 8);
                     custid = rfid2;
-                    rfid2 = rfid2 + "-" + (long.Parse(rfidhex.Substring(2, rfidhex.Length - 2), System.Globalization.NumberStyles.HexNumber)).ToString();
+                    rfid2 = custid + "-" + (long.Parse(rfid1, System.Globalization.NumberStyles.HexNumber)).ToString();
+                    //rfid2 = custid + "-" + (long.Parse(rfidhex.Substring(2, rfidhex.Length - 2), System.Globalization.NumberStyles.HexNumber)).ToString();
                     //sifrarm = "";
                     neradi = "0";
                     if (posta.Length == 0)
@@ -5761,7 +5766,10 @@ namespace ern
                  }
 
                     
-                    ////if (idd1 == 1684)
+                    if (idd1 == 900074){
+                        idzadnji = 900071;
+                        continue;
+                    }
                         
                     if ( idd1 > idzadnji && neradi == "0" )
 
@@ -5801,7 +5809,7 @@ namespace ern
                                 ime = ime.Replace("'", "").Trim();
                             // update rfind, kartice
                                 
-                                SqlCommand cmd = new SqlCommand("dbo.FX_Import", cn);
+                                SqlCommand cmd = new SqlCommand("rfind.dbo.FX_Import", cn);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.Add("@EXT_ID", SqlDbType.VarChar, 6).Value = id;  // lokacija
                                 cmd.Parameters.Add("@FNAME", SqlDbType.VarChar, 35).Value = ime;  // """; //  DateTime.ParseExact(dat1, "yyyy-MM-dd HH:mm:ss" , System.Globalization.CultureInfo.InvariantCulture);  // Od datuma
@@ -6024,7 +6032,7 @@ namespace ern
             pocetniEkran();
             pnl_deaktiv.Visible = false;
             string csn1, id1, imedjelatnika1;
-            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=RFIND;User ID=sa;Password=AdminFX9.";
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=sa;Password=AdminFX9.";
             SqlDataReader rdr = null;
             csn1 = "";
             id1 =  cbx_listaradnika_deaktiv.SelectedValue.ToString();
@@ -6039,7 +6047,7 @@ namespace ern
 
             SqlConnection cn1 = new SqlConnection(connectionString);
             cn1.Open();
-            SqlCommand sqlCommand1 = new SqlCommand("update badge set active=0 where extid=" + id1.Trim(), cn1);
+            SqlCommand sqlCommand1 = new SqlCommand("update rfind.dbo.badge set active=0 where extid=" + id1.Trim(), cn1);
             SqlDataReader reader21 = sqlCommand1.ExecuteReader();            
             cn1.Close();
 
@@ -6053,6 +6061,40 @@ namespace ern
             }
 
 
+        }
+
+        private void Btn_aktiviraj_Click(object sender, EventArgs e)
+        {
+            pocetniEkran();
+            pnl_deaktiv.Visible = false;
+            string csn1, id1, imedjelatnika1;
+            string connectionString = @"Data Source=192.168.0.3;Initial Catalog=fx_RFIND;User ID=sa;Password=AdminFX9.";
+            SqlDataReader rdr = null;
+            csn1 = "";
+            id1 = cbx_listaradnika_deaktiv.SelectedValue.ToString();
+            imedjelatnika1 = cbx_listaradnika_deaktiv.Text.ToString();
+            string[] lista1 = imedjelatnika1.Split(' ');
+            string ime1 = lista1[1];
+            string prezime1 = lista1[0];
+            string rfid1 = "", rfidhex = "", custid1 = "";
+            string poduzece = "";
+            string connectionStringp = "";
+            string ime0 = "", prezime0 = "", rfid0 = "", rfidhex0 = "", rfid20 = "", custid0 = "", rv0 = "";
+
+            SqlConnection cn1 = new SqlConnection(connectionString);
+            cn1.Open();
+            SqlCommand sqlCommand1 = new SqlCommand("update rfind.dbo.badge set active=1 where extid=" + id1.Trim(), cn1);
+            SqlDataReader reader21 = sqlCommand1.ExecuteReader();
+            cn1.Close();
+
+
+            using (SqlConnection cn10 = new SqlConnection(connectionString))
+            {
+                cn10.Open();
+                SqlCommand sqlCommand = new SqlCommand("insert into erv_log (korisnik,idprijave,opis,datum) values('" + korisnik + "','" + idprijave + "','Deaktivacija kartice za " + id1.ToString() + "', getdate())", cn10);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                cn10.Close();
+            }
         }
 
         private void feroimpexToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -6267,7 +6309,7 @@ namespace ern
                             prezime = prezime.Replace("'", "");
                             ime = ime.Replace("'", "");
 
-                            SqlCommand cmd = new SqlCommand("dbo.FX_Import", cn);
+                            SqlCommand cmd = new SqlCommand("rfind.dbo.FX_Import", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("@EXT_ID", SqlDbType.VarChar, 5).Value = id;  // lokacija
                             cmd.Parameters.Add("@FNAME", SqlDbType.VarChar, 35).Value = ime;  // """; //  DateTime.ParseExact(dat1, "yyyy-MM-dd HH:mm:ss" , System.Globalization.CultureInfo.InvariantCulture);  // Od datuma
@@ -6498,7 +6540,7 @@ namespace ern
                             prezime = prezime.Replace("'", "");
                             ime = ime.Replace("'", "");
 
-                            SqlCommand cmd = new SqlCommand("dbo.FX_Import", cn);
+                            SqlCommand cmd = new SqlCommand("rfind.dbo.FX_Import", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("@EXT_ID", SqlDbType.VarChar, 5).Value = id;  // lokacija
                             cmd.Parameters.Add("@FNAME", SqlDbType.VarChar, 35).Value = ime;  // """; //  DateTime.ParseExact(dat1, "yyyy-MM-dd HH:mm:ss" , System.Globalization.CultureInfo.InvariantCulture);  // Od datuma

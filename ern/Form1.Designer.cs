@@ -80,6 +80,7 @@
             this.tokabuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.feroimpex900ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tokabu900ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deaktivacijaKarticeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -191,12 +192,12 @@
             this.lbl_user = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deaktivacijaKarticeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_deaktiv = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.cbx_listaradnika_deaktiv = new System.Windows.Forms.ComboBox();
-            this.btn_zatvori_deakt = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.btn_zatvori_deakt = new System.Windows.Forms.Button();
+            this.cbx_listaradnika_deaktiv = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btn_aktiviraj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -428,14 +429,14 @@
             // feroimpexToolStripMenuItem2
             // 
             this.feroimpexToolStripMenuItem2.Name = "feroimpexToolStripMenuItem2";
-            this.feroimpexToolStripMenuItem2.Size = new System.Drawing.Size(129, 22);
+            this.feroimpexToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
             this.feroimpexToolStripMenuItem2.Text = "Feroimpex";
             this.feroimpexToolStripMenuItem2.Click += new System.EventHandler(this.feroimpexToolStripMenuItem2_Click);
             // 
             // tokabuToolStripMenuItem2
             // 
             this.tokabuToolStripMenuItem2.Name = "tokabuToolStripMenuItem2";
-            this.tokabuToolStripMenuItem2.Size = new System.Drawing.Size(129, 22);
+            this.tokabuToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
             this.tokabuToolStripMenuItem2.Text = "Tokabu";
             this.tokabuToolStripMenuItem2.Click += new System.EventHandler(this.tokabuToolStripMenuItem2_Click);
             // 
@@ -645,29 +646,36 @@
             // feroimpexToolStripMenuItem1
             // 
             this.feroimpexToolStripMenuItem1.Name = "feroimpexToolStripMenuItem1";
-            this.feroimpexToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.feroimpexToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.feroimpexToolStripMenuItem1.Text = "Feroimpex";
             this.feroimpexToolStripMenuItem1.Click += new System.EventHandler(this.feroimpexToolStripMenuItem1_Click);
             // 
             // tokabuToolStripMenuItem1
             // 
             this.tokabuToolStripMenuItem1.Name = "tokabuToolStripMenuItem1";
-            this.tokabuToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.tokabuToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.tokabuToolStripMenuItem1.Text = "Tokabu";
             this.tokabuToolStripMenuItem1.Click += new System.EventHandler(this.tokabuToolStripMenuItem1_Click);
             // 
             // feroimpex900ToolStripMenuItem
             // 
             this.feroimpex900ToolStripMenuItem.Name = "feroimpex900ToolStripMenuItem";
-            this.feroimpex900ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.feroimpex900ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.feroimpex900ToolStripMenuItem.Text = "Feroimpex_900";
             this.feroimpex900ToolStripMenuItem.Click += new System.EventHandler(this.feroimpex900ToolStripMenuItem_Click);
             // 
             // tokabu900ToolStripMenuItem
             // 
             this.tokabu900ToolStripMenuItem.Name = "tokabu900ToolStripMenuItem";
-            this.tokabu900ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tokabu900ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.tokabu900ToolStripMenuItem.Text = "Tokabu_900";
+            // 
+            // deaktivacijaKarticeToolStripMenuItem
+            // 
+            this.deaktivacijaKarticeToolStripMenuItem.Name = "deaktivacijaKarticeToolStripMenuItem";
+            this.deaktivacijaKarticeToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.deaktivacijaKarticeToolStripMenuItem.Text = "Deaktivacija kartice";
+            this.deaktivacijaKarticeToolStripMenuItem.Click += new System.EventHandler(this.DeaktivacijaKarticeToolStripMenuItem_Click);
             // 
             // comboBox3
             // 
@@ -1880,16 +1888,10 @@
             this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // deaktivacijaKarticeToolStripMenuItem
-            // 
-            this.deaktivacijaKarticeToolStripMenuItem.Name = "deaktivacijaKarticeToolStripMenuItem";
-            this.deaktivacijaKarticeToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.deaktivacijaKarticeToolStripMenuItem.Text = "Deaktivacija kartice";
-            this.deaktivacijaKarticeToolStripMenuItem.Click += new System.EventHandler(this.DeaktivacijaKarticeToolStripMenuItem_Click);
-            // 
             // pnl_deaktiv
             // 
             this.pnl_deaktiv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_deaktiv.Controls.Add(this.btn_aktiviraj);
             this.pnl_deaktiv.Controls.Add(this.label26);
             this.pnl_deaktiv.Controls.Add(this.btn_zatvori_deakt);
             this.pnl_deaktiv.Controls.Add(this.cbx_listaradnika_deaktiv);
@@ -1900,14 +1902,24 @@
             this.pnl_deaktiv.TabIndex = 11;
             this.pnl_deaktiv.Visible = false;
             // 
-            // label25
+            // label26
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(18, 58);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(91, 13);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Odaberite radnika";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(150, 11);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(152, 13);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Deaktivacija/Aktivacija kartice";
+            // 
+            // btn_zatvori_deakt
+            // 
+            this.btn_zatvori_deakt.Location = new System.Drawing.Point(175, 89);
+            this.btn_zatvori_deakt.Name = "btn_zatvori_deakt";
+            this.btn_zatvori_deakt.Size = new System.Drawing.Size(75, 23);
+            this.btn_zatvori_deakt.TabIndex = 2;
+            this.btn_zatvori_deakt.Text = "Deaktiviraj";
+            this.btn_zatvori_deakt.UseVisualStyleBackColor = true;
+            this.btn_zatvori_deakt.Click += new System.EventHandler(this.Btn_zatvori_deakt_Click);
             // 
             // cbx_listaradnika_deaktiv
             // 
@@ -1918,24 +1930,24 @@
             this.cbx_listaradnika_deaktiv.TabIndex = 1;
             this.cbx_listaradnika_deaktiv.SelectedIndexChanged += new System.EventHandler(this.ComboBox14_SelectedIndexChanged);
             // 
-            // btn_zatvori_deakt
+            // label25
             // 
-            this.btn_zatvori_deakt.Location = new System.Drawing.Point(168, 100);
-            this.btn_zatvori_deakt.Name = "btn_zatvori_deakt";
-            this.btn_zatvori_deakt.Size = new System.Drawing.Size(75, 23);
-            this.btn_zatvori_deakt.TabIndex = 2;
-            this.btn_zatvori_deakt.Text = "Deaktiviraj";
-            this.btn_zatvori_deakt.UseVisualStyleBackColor = true;
-            this.btn_zatvori_deakt.Click += new System.EventHandler(this.Btn_zatvori_deakt_Click);
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(18, 58);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(91, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Odaberite radnika";
             // 
-            // label26
+            // btn_aktiviraj
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(150, 11);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(101, 13);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Deaktivacija kartice";
+            this.btn_aktiviraj.Location = new System.Drawing.Point(175, 119);
+            this.btn_aktiviraj.Name = "btn_aktiviraj";
+            this.btn_aktiviraj.Size = new System.Drawing.Size(75, 23);
+            this.btn_aktiviraj.TabIndex = 4;
+            this.btn_aktiviraj.Text = "Aktiviraj";
+            this.btn_aktiviraj.UseVisualStyleBackColor = true;
+            this.btn_aktiviraj.Click += new System.EventHandler(this.Btn_aktiviraj_Click);
             // 
             // Form1
             // 
@@ -2187,6 +2199,7 @@
         private System.Windows.Forms.ComboBox cbx_listaradnika_deaktiv;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btn_aktiviraj;
     }
 }
 
